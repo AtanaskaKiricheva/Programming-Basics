@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var groupcount = int.Parse(Console.ReadLine());
+            var automobile = 0.0;
+            var microbus = 0.0;
+            var minibus = 0.0;
+            var bigbus = 0.0;
+            var train = 0.0;
+
+
+            for (int i = 0; i < groupcount; i++)
+            {
+            var peoplecount = int.Parse(Console.ReadLine());
+
+                if (peoplecount<=5)
+                {
+                    automobile += peoplecount;
+                }
+                if (peoplecount<=12 && peoplecount>=6)
+                {
+                    microbus += peoplecount;
+                }
+                if (peoplecount>=13 && peoplecount<=25)
+                {
+                    minibus += peoplecount;
+                }
+                if (peoplecount>=26&&peoplecount<=40)
+                {
+                    bigbus += peoplecount;
+                }
+                if (peoplecount>=41)
+                {
+                     train += peoplecount;
+                }
+
+            }
+            var total = automobile + microbus + minibus + bigbus + train;
+
+            Console.WriteLine("{0:f2}%", automobile / total * 100);
+            Console.WriteLine("{0:f2}%", microbus / total * 100);
+            Console.WriteLine("{0:f2}%", minibus / total * 100);
+            Console.WriteLine("{0:f2}%", bigbus / total * 100);
+            Console.WriteLine("{0:f2}%", train / total * 100);
+
+        }
+    }
+}

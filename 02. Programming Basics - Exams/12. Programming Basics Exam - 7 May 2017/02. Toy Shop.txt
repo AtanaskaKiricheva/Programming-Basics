@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var tripprice = double.Parse(Console.ReadLine());
+            var puzzlecount = int.Parse(Console.ReadLine());
+            var dollcount = int.Parse(Console.ReadLine());
+            var bearscount = int.Parse(Console.ReadLine());
+            var minioncount = int.Parse(Console.ReadLine());
+            var truckcount = int.Parse(Console.ReadLine());
+
+            var puzzle = 2.6;
+            var doll = 3.0;
+            var bear = 4.1;
+            var minion = 8.2;
+            var truck = 2.0;
+
+            var total = puzzle * puzzlecount + doll * dollcount + bear * bearscount + minion * minioncount + truck * truckcount;
+
+            if (puzzlecount+dollcount+bearscount+minioncount+truckcount>=50)
+            {
+                total = total - total * 0.25;
+            }
+
+            total -= total * 0.1;
+            if (total>=tripprice)
+            {
+                Console.WriteLine("Yes! {0:f2} lv left.", total-tripprice);
+            }
+            else
+            {
+                Console.WriteLine("Not enough money! {0:f2} lv needed.", tripprice-total);
+            }
+
+
+
+        }
+    }
+}

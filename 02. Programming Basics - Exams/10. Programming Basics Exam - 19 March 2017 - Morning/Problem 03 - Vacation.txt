@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var budget = double.Parse(Console.ReadLine());
+            var season = (Console.ReadLine());
+
+            var place = string.Empty;
+            var sleep = string.Empty;
+
+            if (budget <= 1000)
+            {
+                sleep = "Camp";
+                switch (season)
+                {
+                    case "Summer": budget = 0.65 * budget; place = "Alaska"; break;
+                    case "Winter": budget = 0.45 * budget;place = "Morocco"; break;
+                }
+            }
+            if (budget > 1000 && budget <= 3000)
+            {
+                sleep = "Hut";
+                switch (season)
+                {
+                    case "Summer": budget = 0.8 * budget;place = "Alaska";  break;
+                    case "Winter": budget = 0.6 * budget; place = "Morocco"; break;
+                }
+            }
+            if (budget > 3000)
+            {
+                sleep = "Hotel";
+                switch (season)
+                {
+                    case "Summer": budget = 0.9 * budget;place = "Alaska"; break;
+                    case "Winter": budget = 0.9 * budget;place = "Morocco"; break;
+                }
+            }
+            Console.WriteLine("{0} - {1} - {2:f2}",place,sleep,budget);
+        }
+    }
+}

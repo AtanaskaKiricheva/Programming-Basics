@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var hrizantemi = int.Parse(Console.ReadLine());
+            var rozi = int.Parse(Console.ReadLine());
+            var laleta = int.Parse(Console.ReadLine());
+            var sezon = Console.ReadLine();
+            string holiday = Console.ReadLine().ToUpper();
+
+
+            if (sezon == "Spring" || sezon == "Summer")
+            {
+                var price = (hrizantemi * 2.0) + (rozi * 4.1) + (laleta * 2.5);
+
+                if (holiday == "Y")
+                {
+                    price += price * 0.15;
+                }
+                if (sezon=="Spring")
+                {
+                   if (laleta > 7)
+                   {
+                       price -= price * 0.05;
+                   }
+                }
+                if (hrizantemi + rozi + laleta > 20)
+                {
+                    price -= price * 0.2;
+                }
+                    Console.WriteLine("{0:f2}", price + 2);
+            }
+            else
+            {
+                var price = (hrizantemi * 3.75) + (rozi * 4.5) + (laleta * 4.15);
+
+                if (holiday == "Y")
+                {
+                    price += price * 0.15;
+                }
+                if (sezon=="Winter")
+                {
+                  if (rozi >= 10)
+                  {
+                      price -= price * 0.1;
+                  }
+                }
+                if (hrizantemi + rozi + laleta > 20)
+                {
+                    price -= price * 0.2;
+                }
+                    Console.WriteLine("{0:f2}", price + 2);
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var firstplayer = int.Parse(Console.ReadLine());
+            var secondplayer = int.Parse(Console.ReadLine());
+            var battles = int.Parse(Console.ReadLine());
+
+            var count = 0;
+            for (int i = 1; i <= firstplayer; i++)
+            {
+                for (int j = 1; j <= secondplayer; j++)
+                {
+                    if (count==battles)
+                    {
+                        Console.WriteLine();
+                        return;
+                    }
+                    Console.Write("({0} <-> {1}) ",i,j);
+                    count++;
+                }
+            }
+            Console.WriteLine();
+        }
+    }
+}

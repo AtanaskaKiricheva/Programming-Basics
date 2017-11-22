@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var loze= double.Parse(Console.ReadLine());
+            var kilos= double.Parse(Console.ReadLine());
+            var brak= double.Parse(Console.ReadLine());
+
+            var grozde = loze * kilos;
+            var ostatak = grozde - brak;
+
+            var rakia = 0.45 * ostatak;
+            var litri = rakia / 7.5;
+            var prihod = litri * 9.8;
+
+            var prodan = 0.55 * ostatak;
+            var total = prodan * 1.5;
+
+            Console.WriteLine("{0:f2}",prihod);
+            Console.WriteLine("{0:f2}", total);
+
+
+        }
+    }
+}

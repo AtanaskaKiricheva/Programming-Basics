@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var length = int.Parse(Console.ReadLine());
+            var width = int.Parse(Console.ReadLine());
+            var height = double.Parse(Console.ReadLine());
+            var price = double.Parse(Console.ReadLine());
+            var weight = double.Parse(Console.ReadLine());
+
+            var web = 2 * length + 2 * width;
+            var priceofweb = web * price;
+            var plosht = web * height;
+            var teglo = plosht * weight;
+
+            Console.WriteLine( web);
+            Console.WriteLine("{0:f2}", priceofweb);
+            Console.WriteLine("{0:f3}", teglo);
+
+
+        }
+    }
+}

@@ -1,0 +1,18 @@
+using System;
+
+class Digits
+{
+    static void Main(string[] args)
+    {
+        var vegetable = double.Parse(Console.ReadLine());
+        var fruit = double.Parse(Console.ReadLine());
+        var totalvegetable = int.Parse(Console.ReadLine());
+        var totalfruit = int.Parse(Console.ReadLine());
+
+        var euro = 1.94;
+
+        Console.WriteLine((vegetable * totalvegetable + fruit * totalfruit) / euro);
+
+
+    }
+}

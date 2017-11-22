@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double h = double.Parse(Console.ReadLine());
+            double x = double.Parse(Console.ReadLine());
+            double y = double.Parse(Console.ReadLine());
+
+
+            double x1 = 2 * h;
+            double y1 = 4 * h;
+            double x2 = h;
+            double y2 = h;
+            double xx1 = h * 3;
+            double yy1 = h;
+            double xx2 = 0;
+            double yy2 = 0;
+
+            bool checkXFirstInside = (x2 < x && x < x1);
+            bool checkYFirstInside = (y2 < y && y < y1);
+            bool checkXSecondInside = (xx2 < x && x < xx1);
+            bool checkYSecondInside = (yy2 < y && y < yy1);
+
+            bool checkXFirstBorder = (x2 == x || x == x1);
+            bool checkYFirstBorder = (y2 == y || y == y1);
+            bool checkXSecondBorder = (xx2 == x || x == xx1);
+            bool checkYSecondBorder = (yy2 == y || y == yy1);
+
+            bool isOnBorderXFirst = (((x == x1) && (y2 <= y && y <= y1)) || ((x == x2) && (y2 <= y && y <= y1)));
+            bool isOnBorderYFirst = (((y == y1) && (x2 <= x && x <= x1)) || ((y == y2) && (x2 <= x && x <= x1)));
+
+            bool isOnBorderXSecond = (((x == xx1) && (yy2 <= y && y <= yy1)) || ((x == xx2) && (yy2 <= y && y <= yy1)));
+            bool isOnBorderYSecond = (((y == yy1) && (xx2 <= x && x <= xx1)) || ((y == yy2) && (xx2 <= x && x <= xx1)));
+
+            if (checkYFirstInside && checkXFirstInside) Console.WriteLine("Inside");
+            else if (checkYSecondInside && checkXSecondInside) Console.WriteLine("Inside");
+            else if ((isOnBorderYFirst) && (isOnBorderYSecond) && (x > h && x < (h + h)))
+                Console.WriteLine("Inside");
+            else if (isOnBorderXFirst || isOnBorderYFirst) Console.WriteLine("Border");
+            else if (isOnBorderXSecond || isOnBorderYSecond) Console.WriteLine("Border");
+            else Console.WriteLine("Outside");
+        }
+    }
+}

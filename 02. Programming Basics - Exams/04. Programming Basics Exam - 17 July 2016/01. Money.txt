@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var bitcoin = double.Parse(Console.ReadLine());
+            var chinese = double.Parse(Console.ReadLine());
+            var commission = double.Parse(Console.ReadLine());
+
+            var onebit = 1168;
+            var onechin = 0.15;
+            var onedol = 1.76;
+
+            var bit = bitcoin * onebit;
+            var chin = chinese * onechin;
+            var dol = chin * onedol;
+
+            var leva = bit + dol;
+            var eur = leva / 1.95;
+            var comm = (commission*0.01)* eur;
+
+            Console.WriteLine("{0:f2}",eur-comm);
+
+
+
+        }
+    }
+}

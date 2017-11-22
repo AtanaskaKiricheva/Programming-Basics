@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var season = (Console.ReadLine());
+            var grouptype = (Console.ReadLine());
+            var studencount = int.Parse(Console.ReadLine());
+            var nightcount = int.Parse(Console.ReadLine());
+
+            var girlsnboys = 0.0;
+            var  mixed = 0.0;
+
+            var boys = string.Empty;
+            var girls = string.Empty;
+            var sportmixed =string.Empty;
+            switch (season)
+            {
+                case "Winter":girlsnboys = 9.6;  mixed = 10;girls = "Gymnastics";boys = "Judo";sportmixed = "Ski";break;
+                case "Spring":girlsnboys = 7.2; mixed = 9.5;girls = "Athletics";boys = "Tennis";sportmixed = "Cycling"; break;
+                case "Summer":girlsnboys = 15; mixed = 20;girls = "Volleyball";boys = "Football";sportmixed = "Swimming"; break;
+            }
+            var totalgirlsnboys = girlsnboys * studencount*nightcount;
+            var totalmixed = mixed * studencount*nightcount;
+            if (studencount>=50)
+            {
+                totalgirlsnboys -= totalgirlsnboys * 0.5;
+                totalmixed -= totalmixed * 0.5;
+            }
+            if (studencount>=20 && studencount<50)
+            {
+                totalgirlsnboys -= totalgirlsnboys * 0.15;
+                totalmixed -= totalmixed * 0.15;
+            }
+            if (studencount>=10 &&studencount<20)
+            {
+                totalgirlsnboys -= totalgirlsnboys * 0.05;
+                totalmixed -= totalmixed * 0.05;
+            }
+            if (grouptype=="girls")
+            {
+                Console.Write(girls); Console.WriteLine(" {0:f2} lv.",totalgirlsnboys);
+            }
+            if (grouptype=="boys")
+            {
+                Console.Write(boys ); Console.WriteLine(" {0:f2} lv.", totalgirlsnboys);
+            }
+            if (grouptype=="mixed")
+            {
+                Console.Write(sportmixed ); Console.WriteLine(" {0:f2} lv.", totalmixed);
+            }
+
+        }
+    }
+}

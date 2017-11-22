@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var speed = double.Parse(Console.ReadLine());
+            var firsttime = double.Parse(Console.ReadLine());
+            var secondtime = double.Parse(Console.ReadLine());
+            var thirdtime = double.Parse(Console.ReadLine());
+
+            var withfirst = (firsttime/60) * speed;
+            var secondspeed = (speed + speed * 0.1) * (secondtime/60); 
+            var thirdspeed = ((speed + speed * 0.1) - (speed + speed * 0.1)* 0.05)*(thirdtime/60);
+
+            var total = withfirst + secondspeed + thirdspeed;
+
+            Console.WriteLine("{0:f2}",total);
+
+
+
+        }
+    }
+}

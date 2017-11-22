@@ -1,0 +1,77 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var peopleduringgame= int.Parse(Console.ReadLine());
+
+            var percentage = 0.0;
+            var first = 0.0;
+            var second = 0.0;
+            var third= 0.0;
+            var forth = 0.0;
+            var fifth = 0.0;
+            var sixt = 0.0;
+
+            for (int i = 0; i < peopleduringgame; i++)
+            {
+            var numberinterval = int.Parse(Console.ReadLine());
+
+                if (numberinterval<0 || numberinterval>50)
+                {
+                    sixt += 1;
+                    percentage = percentage / 2;
+                }
+                if (numberinterval==0)
+                {
+                    first += 1;
+                    percentage += 0;
+                }
+                if (numberinterval<=9&& numberinterval>0)
+                {
+                    first += 1;
+                    percentage += numberinterval*20 / 100.0;
+                }
+                if (numberinterval>=10 &&numberinterval<=19)
+                {
+                    second += 1;
+                    percentage += numberinterval*30/ 100.0;
+                }
+                if (numberinterval>=20&&numberinterval<=29)
+                {
+                    third += 1;
+                    percentage += 40 * numberinterval / 100.0;
+                }
+                if (numberinterval>=30&&numberinterval<=39)
+                {
+                    forth += 1;
+                    percentage += 50;
+                }
+                if (numberinterval>=40&&numberinterval<=50)
+                {
+                    fifth += 1;
+                    percentage += 100;
+                }
+
+            }
+            Console.WriteLine("{0:f2}", percentage);
+            Console.WriteLine("From 0 to 9: {0:f2}%", first/peopleduringgame*100.0);
+            Console.WriteLine("From 10 to 19: {0:f2}%", second/peopleduringgame*100.0);
+            Console.WriteLine("From 20 to 29: {0:f2}%", third / peopleduringgame * 100.0);
+            Console.WriteLine("From 30 to 39: {0:f2}%", forth / peopleduringgame * 100.0);
+            Console.WriteLine("From 40 to 50: {0:f2}%", fifth / peopleduringgame * 100.0);
+            Console.WriteLine("Invalid numbers: {0:f2}%", sixt / peopleduringgame * 100.0);
+
+
+
+
+        }
+    }
+}

@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            int prevsum = 0;
+            int maxdiff = 0;
+            bool equals = true;
+
+            for (int i = 0; i < n; i++)
+            {
+                int first = int.Parse(Console.ReadLine());
+                int second = int.Parse(Console.ReadLine());
+                int sum = first + second;
+            
+            if (i!=0)
+            {
+                    int diff = Math.Abs(sum - prevsum);
+                    if (diff>maxdiff)
+                    {
+                        maxdiff = diff;
+                        equals = false;
+                    }
+            }
+           prevsum = sum;
+          }
+            if (equals)
+            {
+                Console.WriteLine("yes value {0}",prevsum);
+            }
+            else
+            {
+                Console.WriteLine("no maxdiff {0}",maxdiff);
+            }
+        }
+    }
+}

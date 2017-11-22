@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var budget = double.Parse(Console.ReadLine());
+            var plosht = double.Parse(Console.ReadLine());
+            var prozorci = double.Parse(Console.ReadLine());
+            var stiriopor = double.Parse(Console.ReadLine());
+            var cena = double.Parse(Console.ReadLine());
+
+            var kashta = plosht - prozorci * 2.4;
+            var dop = kashta + kashta * 0.1;
+            var paketi = Math.Ceiling(dop / stiriopor);
+            var total = paketi * cena;
+
+
+            if (budget >= total)
+            {
+                Console.WriteLine("Spent: {0:f2}", total);
+                Console.WriteLine("Left: {0:f2}", budget - total);
+            }
+            else
+            {
+                Console.WriteLine("Need more: {0:f2}",total-budget);
+            }
+
+
+        }
+    }
+}

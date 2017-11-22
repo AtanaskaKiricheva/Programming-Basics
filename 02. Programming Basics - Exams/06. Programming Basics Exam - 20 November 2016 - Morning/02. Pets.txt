@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var days = int.Parse(Console.ReadLine());
+            var kilosfood = int.Parse(Console.ReadLine());
+            var dogfoodperday = double.Parse(Console.ReadLine());
+            var catfoodperday = double.Parse(Console.ReadLine());
+            var turtlefoodperday = double.Parse(Console.ReadLine());
+
+            var dogfood = days * dogfoodperday;
+            var catfood = days * catfoodperday;
+            var turtlefood = days * (turtlefoodperday/1000);
+
+            var totalfood = dogfood + catfood + turtlefood;
+
+            if (totalfood<=kilosfood)
+            {
+                Console.WriteLine("{0} kilos of food left.", Math.Truncate(kilosfood-totalfood));
+            }
+            else
+            {
+                Console.WriteLine("{0} more kilos of food are needed.", Math.Ceiling(totalfood-kilosfood));
+            }
+
+
+        }
+    }
+}

@@ -1,0 +1,52 @@
+using System;
+
+namespace Softuni
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            double numbersCount = 0;
+            Console.Write("->");
+            double.TryParse(Console.ReadLine(), out numbersCount);
+
+            double oddSum = 0;
+            double oddMin = double.MaxValue;
+            double oddMax = double.MinValue;
+
+            double evenSum = 0;
+            double evenMin = double.MaxValue;
+            double evenMax = double.MinValue;
+
+            double _currentNumber = 0.0;
+
+            for (int i = 0; i < numbersCount; i++)
+            {
+               double.TryParse(Console.ReadLine(), out _currentNumber);
+
+                if (i % 2 == 0)
+                {
+                    oddMax = oddMax < _currentNumber ? _currentNumber : oddMax;
+                    oddMin = oddMin > _currentNumber || i == 0 ? _currentNumber : oddMin;
+                    oddSum += _currentNumber;
+                }
+                else
+                {
+                    evenMax = evenMax < _currentNumber ? _currentNumber : evenMax;
+                    evenMin = evenMin > _currentNumber || i == 1 ? _currentNumber : evenMin;
+                    evenSum += _currentNumber;
+                }
+            }
+
+            Console.WriteLine("OddSum: {0}", oddSum);
+            Console.WriteLine("OddMin {0}", oddMin == double.MaxValue ? "No" : oddMin.ToString());
+            Console.WriteLine("OddMax: {0}", oddMax == double.MinValue ? "No" : oddMax.ToString());
+
+            Console.WriteLine("EvenSum: {0}", evenSum);
+            Console.WriteLine("EvenMin: {0}", evenMin == double.MaxValue ? "No" : evenMin.ToString());
+            Console.WriteLine("EvenMax: {0}", evenMax == double.MinValue ? "No" : evenMax.ToString());
+
+            Console.ReadLine();
+        }
+    }
+}

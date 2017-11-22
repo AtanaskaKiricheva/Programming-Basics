@@ -1,0 +1,74 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("{0}",new string('#',4*n+1));
+
+            var dots = 1;
+            var sharps = (((4 * n) + 1) - 3) / 2;
+            var spaces = 1;
+
+            for (int i = 0; i < n/2; i++)
+            {
+                Console.WriteLine("{0}{1}{2}{1}{0}",
+                    new string('.',dots ),new string('#',sharps ),new string(' ',spaces ));
+                dots += 1;
+                sharps -= 2;
+                spaces += 2;
+            }
+            Console.WriteLine("{0}{1}{2}(@){2}{1}{0}",
+                    new string('.', dots), new string('#', sharps), new string(' ', (spaces-3)/2));
+            if (n%2==0)
+            {
+
+                for (int i = 0; i < n / 2 - 1; i++)
+                {
+                    dots += 1;
+                    sharps -= 2;
+                    spaces += 2;
+                    Console.WriteLine("{0}{1}{2}{1}{0}",
+                        new string('.', dots), new string('#', sharps), new string(' ', spaces));
+                }
+
+                for (int i = 0; i < n; i++)
+                {
+                    dots += 1;
+                    sharps = (4 * n) + 1 - 2 * dots;
+                    Console.WriteLine("{0}{1}{0}", new string('.', dots), new string('#', sharps));
+                    sharps -= 2;
+                }
+            }
+            else
+            {
+
+            for (int i = 0; i <= n/2-1; i++)
+            {
+                dots += 1;
+                sharps -= 2;
+                spaces += 2;
+                Console.WriteLine("{0}{1}{2}{1}{0}",
+                    new string('.', dots), new string('#', sharps), new string(' ', spaces));
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                dots += 1;
+                sharps = (4 * n) + 1 - 2 * dots;
+                Console.WriteLine("{0}{1}{0}", new string('.', dots),new string('#', sharps));
+                sharps -= 2;
+            }
+            }
+
+        }
+    }
+}

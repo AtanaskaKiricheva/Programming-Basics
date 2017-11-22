@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var m = int.Parse(Console.ReadLine());
+            var n = int.Parse(Console.ReadLine());
+            var l = int.Parse(Console.ReadLine());
+            var special = int.Parse(Console.ReadLine());
+            var control = int.Parse(Console.ReadLine());
+
+            for (int i = m; i >= 1; i--)
+            {
+                for (int j = n; j >= 1; j--)
+                {
+                    for (int k = l; k >= 1; k--)
+                    {
+                        var number = (i * 100) + (j * 10) + k;
+                        if (number%3==0)
+                        {
+                            special += 5;
+                        }
+                        else if (number%10==5)
+                        {
+                            special -= 2;
+                        }
+                        else if(number%2==0)
+                        {
+                            special *= 2;
+                        }
+                        if (special>=control)
+                        {
+                            Console.WriteLine($"Yes! Control number was reached! Current special number is {special}.");
+                            return;
+                        }
+                    }
+                }
+            }
+            Console.WriteLine($"No! {special} is the last reached special number.");
+        }
+    }
+}

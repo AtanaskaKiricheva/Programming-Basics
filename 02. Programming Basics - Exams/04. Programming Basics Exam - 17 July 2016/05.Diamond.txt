@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            var sidedot =  n - 1;
+            var middledot =3 * n;
+
+            Console.WriteLine("{0}{1}{0}",new string('.',n),new string('*', 3*n));
+
+            for (int i = 0; i < n-1; i++)
+            {
+                Console.WriteLine("{0}*{1}*{0}", new string('.', sidedot), new string('.', middledot));
+                sidedot -= 1;
+                middledot += 2;
+            }
+            Console.WriteLine("{0}",new string ('*',5*n));
+
+            sidedot = 1;
+            middledot = 5 * n - 4;
+            for (int i = 0; i < 2*n+1; i++)
+            {
+                if (i==2*n)
+                {
+                    Console.WriteLine("{0}*{1}*{0}", new string('.', sidedot), new string('*', middledot));
+                }
+                else
+                {
+                Console.WriteLine("{0}*{1}*{0}", new string('.', sidedot), new string('.', middledot));
+                sidedot += 1;
+                middledot -= 2;
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var tovarcount = int.Parse(Console.ReadLine());
+
+           var microbus = 0.0;
+           var truck = 0.0;
+           var train = 0.0;
+            var total = 0;
+
+            for (int i = 0; i < tovarcount; i++)
+            {
+                var tons = int.Parse(Console.ReadLine());
+
+                if (tons<=3)
+                {
+                    microbus += tons;
+                }
+                if (tons>=4 && tons<=11)
+                {
+                    truck += tons;
+                }
+                if (tons>=12)
+                {
+                    train += tons;
+                }
+                total += tons;
+
+            }
+            Console.WriteLine("{0:f2}",(microbus*200+truck*175+train*120)/total);
+            Console.WriteLine("{0:f2}%",microbus/total*100);
+            Console.WriteLine("{0:f2}%",truck/total*100);
+            Console.WriteLine("{0:f2}%",train/total*100);
+
+        }
+    }
+}

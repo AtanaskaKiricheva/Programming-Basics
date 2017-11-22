@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+
+
+        {
+            var dancers = int.Parse(Console.ReadLine());
+            var points = double.Parse(Console.ReadLine());
+            var season = (Console.ReadLine());
+            var place = (Console.ReadLine());
+
+            var money = dancers * points;
+            if (place=="Abroad")
+            {
+                money += money*0.5;
+            }
+            var percent = 0.0;
+            switch (place)
+            {
+                case "Bulgaria":
+                    if (season == "summer")
+                        percent = 5;
+                    else
+                        percent = 8;
+                    break;
+                case "Abroad":
+                    if (season == "summer")
+                        percent = 10;
+                    else
+                        percent = 15;
+                    break;
+            }
+            var moneyafterexpenses = money - (money * (percent/100));
+            var blagotvoritelnost = moneyafterexpenses * 0.75;
+            var leftmoney = moneyafterexpenses - blagotvoritelnost;
+            var zatanciori = leftmoney / dancers;
+
+            Console.WriteLine("Charity - {0:f2}", blagotvoritelnost);
+            Console.WriteLine("Money per dancer - {0:f2}", zatanciori);
+
+        }
+    }
+}

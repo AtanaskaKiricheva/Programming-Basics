@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var record = double.Parse(Console.ReadLine());
+            var meters = double.Parse(Console.ReadLine());
+            var time = double.Parse(Console.ReadLine());
+
+            var ivancho = meters * time;
+            var addition = (Math.Floor(meters / 15) * 12.5);
+            var total = ivancho + addition;
+
+            if (total>=record)
+            {
+                Console.WriteLine("No, he failed! He was {0:f2} seconds slower.",total-record);
+            }
+            else
+            {
+                Console.WriteLine("Yes, he succeeded! The new world record is {0:f2} seconds.",total);
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var priceskumria = double.Parse(Console.ReadLine());
+            var pricecaca = double.Parse(Console.ReadLine());
+            var palamud = double.Parse(Console.ReadLine());
+            var safrid = double.Parse(Console.ReadLine());
+            var midi = int.Parse(Console.ReadLine());
+
+            var pricepalamud = priceskumria + priceskumria * 0.6;
+            var totalpalamud = palamud * pricepalamud;
+            var pricesafrid = pricecaca + pricecaca * 0.8;
+            var totalsafrid = safrid * pricesafrid;
+            var totalmidi = midi * 7.5;
+
+            Console.WriteLine("{0:f2}", totalpalamud + totalsafrid + totalmidi);
+
+        
+
+
+        }
+    }
+}

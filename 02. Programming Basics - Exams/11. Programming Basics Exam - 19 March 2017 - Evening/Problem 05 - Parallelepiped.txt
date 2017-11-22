@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var wave = ((3*n+1)-(n*2+1))-2;
+            var rightdots = n * 2 + 1;
+            var leftdots = 0;
+
+            Console.WriteLine("+{0}+{1}", new string('~',wave),new string('.',rightdots));
+            for (int i = 0; i < n*2+1; i++)
+            {
+                rightdots -= 1;
+                Console.WriteLine(@"|{0}\{1}\{2}", new string('.',leftdots),new string('~',wave),new string('.',rightdots));
+                leftdots += 1;
+            }
+            leftdots -= 1;
+            for (int i = 0; i < n*2+1; i++)
+            {
+                Console.WriteLine(@"{0}\{1}|{2}|", new string('.',rightdots),new string('.',leftdots),new string('~',wave));
+                rightdots += 1;
+                leftdots -= 1;
+            }
+            Console.WriteLine("{0}+{1}+", new string('.', rightdots), new string('~', wave));
+
+        }
+    }
+}

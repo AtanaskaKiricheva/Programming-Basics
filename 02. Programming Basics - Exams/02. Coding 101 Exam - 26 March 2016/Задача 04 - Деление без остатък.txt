@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+
+            var one = 0.0;
+            var two = 0.0;
+            var three = 0.0;
+
+
+            for (int i = 0; i < n; i++)
+            {
+                var n1 = int.Parse(Console.ReadLine());
+
+                if (n1%2==0)
+                {
+                     one++;
+                }
+                if (n1%3==0)
+                {
+                     two++;
+                }
+                if (n1%4==0)
+                {
+                    three++ ;
+                }
+            }
+            Console.WriteLine("{0:f2}%", one/ n*100 );
+            Console.WriteLine("{0:f2}%", two/n*100);
+            Console.WriteLine("{0:f2}%", three/n*100);
+
+        }
+    }
+}

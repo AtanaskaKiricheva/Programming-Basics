@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var middash = 0;
+            var rightdash = n;
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("{0}*{1}*{2}",
+                    new string('-', 3 * n), new string('-', middash), new string('-', 5 * n - middash - 3 * n - 2));
+                middash += 1;
+                rightdash -= 1;
+            }
+            for (int i = 0; i < n / 2; i++)
+            {
+                Console.WriteLine("{0}*{1}*{1}", new string('*', n * 3), new string('-', n - 1));
+            }
+            var dash = n * 3;
+            var mid = n - 1;
+            var right = n - 1;
+            for (int i = 0; i < (n / 2 - 2) + 1; i++)
+            {
+                Console.WriteLine("{0}*{1}*{2}", new string('-', dash), new string('-',mid),new string('-',right));
+                dash -= 1;
+                mid += 2;
+                right -= 1;
+            }
+            mid += 2;
+                Console.WriteLine("{0}{1}{2}",
+                    new string('-', dash), new string('*', mid), new string('-', right));
+        }
+    }
+}

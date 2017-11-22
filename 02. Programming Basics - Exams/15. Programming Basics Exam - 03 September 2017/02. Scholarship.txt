@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var income = double.Parse(Console.ReadLine());
+            var averagesucceed = double.Parse(Console.ReadLine());
+            var minimumwage = double.Parse(Console.ReadLine());
+
+            var social = 0.0;
+            var scholarship2 = 0.0;
+
+            if (averagesucceed >= 5.5)
+            {
+                scholarship2 = averagesucceed * 25;
+            }
+            if (income > minimumwage)
+            {
+                if (averagesucceed < 5.5)
+                {
+                    Console.WriteLine("You cannot get a scholarship!");
+                    return;
+                }
+            }
+            else if (income < minimumwage && averagesucceed > 4.5)
+            {
+                social = minimumwage * 0.35;
+            }
+            else if ( income<minimumwage && averagesucceed<4.5)
+            {
+                Console.WriteLine("You cannot get a scholarship!");
+                return;
+            }
+            if (social > scholarship2)
+            {
+                Console.WriteLine("You get a Social scholarship {0} BGN",  Math.Floor(social));
+            }
+            else
+            {
+                Console.WriteLine("You get a scholarship for excellent results {0} BGN", Math.Floor(scholarship2));
+            }
+
+        }
+    }
+}

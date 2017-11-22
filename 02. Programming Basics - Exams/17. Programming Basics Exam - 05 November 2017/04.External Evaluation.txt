@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+
+            var bad = 0.0;
+            var middle = 0.0;
+            var good = 0.0;
+            var verygood = 0.0;
+            var excellent = 0.0;
+
+
+            for (int i = 0; i < n; i++)
+            {
+                var points = double.Parse(Console.ReadLine());
+
+                if (points <= 22.5)
+                {
+                    bad += 1.0;
+                }
+                if (points > 22.5 && points <= 40.5)
+                {
+                    middle += 1.0;
+                }
+                if (points > 40.5 && points <= 58.5)
+                {
+                    good += 1.0;
+                }
+                if (points > 58.5 && points <= 76.5)
+                {
+                    verygood += 1.0;
+                }
+                if (points > 76.5 && points <= 100)
+                {
+                    excellent += 1.0;
+                }
+            }
+            Console.WriteLine("{0:f2}% poor marks",(bad/n)*100 );
+            Console.WriteLine("{0:f2}% satisfactory marks", (middle/n)*100);
+            Console.WriteLine("{0:f2}% good marks", (good / n) * 100);
+            Console.WriteLine("{0:f2}% very good marks", (verygood / n) * 100);
+            Console.WriteLine("{0:f2}% excellent marks",(excellent / n) * 100 );
+
+        }
+    }
+}

@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var workdays = double.Parse(Console.ReadLine());
+            var profit = double.Parse(Console.ReadLine());
+            var dollar = double.Parse(Console.ReadLine());
+
+            double monthlypay = workdays * profit;
+            double yearprofit = (monthlypay * 12) + (monthlypay * 2.5);
+            double tax = 0.25 * yearprofit;
+            double pureprofit = yearprofit - tax;
+            double inleva = pureprofit * dollar;
+            double midprofitaday = inleva / 365;
+            Console.WriteLine("{0:f2}",midprofitaday);
+
+
+        }
+    }
+}

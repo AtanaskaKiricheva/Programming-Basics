@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var A = double.Parse(Console.ReadLine());
+            var B = double.Parse(Console.ReadLine());
+
+            var stranici = A * (A / 2)*2;
+            var kvadrat = (A / 2) * (A / 2);
+            var triagalnik = (A / 2 * (B - A / 2)) / 2;
+            var zadnastrana = kvadrat+triagalnik;
+            var predna = zadnastrana - (A/5)*(A/5);
+            var pokriv = A * (A/2) * 2;
+            var total = stranici + zadnastrana + predna;
+
+
+             var green=  total/3;
+             var red= pokriv/5;
+
+            Console.WriteLine("{0:f2}",green);
+            Console.WriteLine("{0:f2}",red);
+
+
+
+
+
+        }
+    }
+}

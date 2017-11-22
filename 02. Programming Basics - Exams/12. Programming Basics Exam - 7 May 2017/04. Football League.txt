@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var stadiumcapacity = double.Parse(Console.ReadLine());
+            var fans = double.Parse(Console.ReadLine());
+
+            var a = 0;
+            var b = 0;
+            var v = 0;
+            var g = 0;
+            var total = 0;
+
+            for (int i = 0; i < fans; i++)
+            {
+                var sector = (Console.ReadLine());
+
+                switch (sector)
+                {
+                    case "A": a += 1; break;
+                    case "B": b += 1; break;
+                    case "V": v += 1; break;
+                    case "G": g += 1; break;
+                }
+                total += 1;
+            }
+            var totala = a / fans * 100.0;
+            var totalb= b / fans * 100.0 ;
+            var totalv= v / fans * 100.0 ;
+            var totalg = g / fans * 100.0;
+
+            Console.WriteLine("{0:f2}%", totala);
+            Console.WriteLine("{0:f2}%", totalb);
+            Console.WriteLine("{0:f2}%", totalv);
+            Console.WriteLine("{0:f2}%", totalg);
+            Console.WriteLine("{0:f2}%", fans/stadiumcapacity * 100.0);
+        }
+    }
+}

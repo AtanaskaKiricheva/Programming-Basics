@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+
+            var counter = 0;
+            var one = 1;
+
+            if (n==1)
+            {
+                Console.WriteLine(1);
+            }
+
+            for (int i = 1; i < n; i++)
+            {
+                Console.WriteLine(one+counter);
+                    counter += 1;
+                
+                for (int j = 1; j <=i; j++)
+                {
+                    if (one+counter>n)
+                    {
+                        Console.WriteLine();
+                        return;
+                    }
+                    Console.Write(one+counter+" ");
+                    one += 1;
+                    
+                }
+            }
+        }
+    }
+}

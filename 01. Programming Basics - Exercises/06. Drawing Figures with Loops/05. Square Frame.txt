@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            Console.Write("+ ");                 //горен ред
+            for (int i = 0; i < n-2; i++)        //горен ред
+            {                                    //горен ред
+                    Console.Write("- " );        //горен ред
+            }                                    //горен ред
+            Console.WriteLine("+");              //горен ред
+
+            for (int j = 0; j < n-2; j++)     //среден ред
+            {                                 //среден ред
+            Console.Write("| ");              //среден ред
+                for (int i = 0; i < n-2; i++) //среден ред
+                {                             //среден ред
+                        Console.Write("- " ); //среден ред
+                }                             //среден ред
+                Console.WriteLine("|");       //среден ред
+            }
+            Console.Write("+ ");            //последен ред
+            for (int i = 0; i < n - 2; i++) //последен ред
+            {                               //последен ред
+                Console.Write("- ");        //последен ред
+            }                               //последен ред
+            Console.WriteLine("+");         //последен ред
+        }
+    }
+}

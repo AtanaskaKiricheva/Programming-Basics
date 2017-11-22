@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            string time = Console.ReadLine();
+
+            var taxi = 0.7;
+            var bus = 0.09;
+            var train = 0.06;
+
+            if (n<20)
+            {
+                if (time== "day")
+                {
+                    Console.WriteLine(taxi+(0.79*n));
+                }
+                else if (time=="night")
+                {
+                    Console.WriteLine(taxi+(0.9*n));
+                }
+            }
+            if (n>=20 && n<100)
+            {
+                Console.WriteLine(bus*n);
+            }
+            else if (n>=100)
+            {
+                Console.WriteLine(train*n);
+            }
+
+        }
+    }
+}

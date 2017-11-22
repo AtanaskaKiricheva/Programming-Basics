@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var produkt = Console.ReadLine();
+            var grad = Console.ReadLine();
+            var kol = double.Parse(Console.ReadLine());
+
+            // Sofia- coffee:0.50;  water:0.80;  beer:1.20;  sweets:1.45; peanuts:1.60
+            //Plovdiv       0.40         0.70        1.15          1.30          1.50
+            //Varna         0.45         0.70        1.10          1.35          1.55
+
+            if (grad=="Sofia")
+            {
+                switch (produkt)
+                {
+                    case "coffee": Console.WriteLine(0.50*kol); break;
+                    case "water": Console.WriteLine(0.80*kol);break;
+                    case "beer": Console.WriteLine(1.20*kol);break;
+                    case "sweets": Console.WriteLine(1.45*kol);break;
+                    case "peanuts": Console.WriteLine(1.60*kol);break;
+                }
+            }
+            else if (grad=="Plovdiv")
+            {
+                switch (produkt)
+                {
+
+                    case "coffee": Console.WriteLine(0.40 * kol); break;
+                    case "water": Console.WriteLine(0.70 * kol); break;
+                    case "beer": Console.WriteLine(1.15 * kol); break;
+                    case "sweets": Console.WriteLine(1.30 * kol); break;
+                    case "peanuts": Console.WriteLine(1.50 * kol); break;
+                }
+            }
+            else if (grad=="Varna")
+            {
+                switch (produkt)
+                {
+                    case "coffee": Console.WriteLine(0.45 * kol); break;
+                    case "water": Console.WriteLine(0.70 * kol); break;
+                    case "beer": Console.WriteLine(1.10 * kol); break;
+                    case "sweets": Console.WriteLine(1.35 * kol); break;
+                    case "peanuts": Console.WriteLine(1.55 * kol); break;
+                }
+
+            }
+        }
+    }
+}

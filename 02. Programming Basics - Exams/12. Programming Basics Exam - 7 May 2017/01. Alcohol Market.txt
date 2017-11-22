@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var wiskyprice = double.Parse(Console.ReadLine());
+            var beerquantity = double.Parse(Console.ReadLine());
+            var winequantity = double.Parse(Console.ReadLine());
+            var rakiaquantity = double.Parse(Console.ReadLine());
+            var wiskyquantity = double.Parse(Console.ReadLine());
+
+            var rakiaprice = wiskyprice / 2;
+            var wineprice = rakiaprice - rakiaprice * 0.4;
+            var beerprice = rakiaprice - rakiaprice * 0.8;
+
+            var total = (rakiaprice * rakiaquantity) + (wineprice * winequantity)
+                + (beerprice * beerquantity) + (wiskyprice * wiskyquantity);
+
+            Console.WriteLine("{0:f2}",total);
+
+
+        }
+    }
+}

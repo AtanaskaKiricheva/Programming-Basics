@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var money = double.Parse(Console.ReadLine());
+            var year = int.Parse(Console.ReadLine());
+            var loop = year - 1800;
+            var moneyspent = money;
+
+            var years = 18;
+            for (int i = 0; i < loop+1; i++)
+            {
+
+                if (i % 2 == 0)
+                {
+                    moneyspent -= 12000;
+                }
+                else
+                {
+                    moneyspent -= 12000 + 50 * years;
+                }
+                years += 1;
+            }
+            if (moneyspent>=0)
+            {
+                Console.WriteLine("Yes! He will live a carefree life and will have {0:f2} dollars left.",moneyspent);
+            }
+            else
+            {
+                Console.WriteLine("He will need {0:f2} dollars to survive.",Math.Abs(moneyspent));
+            }
+
+
+        }
+    }
+}

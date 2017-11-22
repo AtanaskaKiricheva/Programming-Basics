@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var budget = double.Parse(Console.ReadLine());
+            var season = (Console.ReadLine());
+            var summer = 0.0;
+            var winter = 0.0;
+
+            if (budget<=100) //bulgaria
+            {
+                summer = 0.3; //camping
+                winter = 0.7; //hotel
+                switch (season)
+                {
+                    case "summer": Console.WriteLine("Somewhere in Bulgaria"); Console.WriteLine("Camp - {0:f2}",budget*summer); break;
+                    case "winter": Console.WriteLine("Somewhere in Bulgaria"); Console.WriteLine("Hotel - {0:f2}",budget * winter); break;
+                }
+            }
+            if (budget<=1000 && budget>100) //balkans
+            {
+                summer = 0.4; //camping
+                winter = 0.8; //hotel
+                switch (season)
+                {
+                    case "summer": Console.WriteLine("Somewhere in Balkans"); Console.WriteLine("Camp - {0:f2}", budget * summer); break;
+                    case "winter": Console.WriteLine("Somewhere in Balkans"); Console.WriteLine("Hotel - {0:f2}",  budget * winter); break;
+                }
+            }
+            if (budget>1000) //europe hotel
+            {
+                summer = 0.9;
+                winter = 0.9;
+                switch (season)
+                {
+                    case "summer": Console.WriteLine("Somewhere in Europe"); Console.WriteLine("Hotel - {0:f2}", budget * summer); break;
+                    case "winter": Console.WriteLine("Somewhere in Europe"); Console.WriteLine("Hotel - {0:f2}", budget * winter); break;
+                }
+            }
+
+
+
+        }
+    }
+}

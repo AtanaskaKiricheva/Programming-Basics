@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var countofolds = int.Parse(Console.ReadLine());
+            var countofstudents = int.Parse(Console.ReadLine());
+            var countofnights = int.Parse(Console.ReadLine());
+            var typeoftransport = (Console.ReadLine());
+
+
+            if (typeoftransport == "train")
+            {
+                if (countofolds + countofstudents >= 50)
+                {
+                    var transport1 = (countofolds * 24.99 + countofstudents * 14.99) * 2;
+                    transport1 -= ((countofolds * (24.99*0.5) + countofstudents * (0.5*14.99))*2);
+                    var hotel1 = countofnights * 82.99;
+                    var commission1 = (transport1 + hotel1) * 0.1;
+                    var total1 = transport1 + hotel1 + commission1;
+                    Console.WriteLine("{0:f2}", total1);
+                }
+                else
+                {
+                    var transport1 = (countofolds * 24.99 + countofstudents * 14.99) * 2;
+                    var hotel1 = countofnights * 82.99;
+                    var commission1 = (transport1 + hotel1) * 0.1;
+                    var total1 = transport1 + hotel1 + commission1;
+                    Console.WriteLine("{0:f2}", total1);
+                }
+            }
+            switch (typeoftransport)
+            {
+                case "airplane":
+                    var transport = (countofolds * 70.0 + countofstudents * 50.0) * 2;
+                    var hotel = countofnights * 82.99;
+                    var commission = (transport + hotel) * 0.1;
+                    var total = transport + hotel + commission;
+                    Console.WriteLine("{0:f2}", total); break;
+                case "bus":
+                    var tra = (countofolds * 32.5 + countofstudents * 28.5) * 2;
+                    var ho = countofnights * 82.99;
+                    var com = (tra + ho) * 0.1;
+                    var to = tra + ho + com;
+                    Console.WriteLine("{0:f2}", to); break;
+                case "boat":
+                    var tran = (countofolds * 42.99 + countofstudents * 39.99) * 2;
+                    var hot = countofnights * 82.99;
+                    var comm = (tran + hot) * 0.1;
+                    var tot = tran + hot + comm;
+                    Console.WriteLine("{0:f2}", tot); break;
+            }
+        }
+    }
+}

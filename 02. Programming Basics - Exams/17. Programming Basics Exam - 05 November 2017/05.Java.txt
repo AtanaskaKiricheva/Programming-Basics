@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("{0}~ ~ ~", new string(' ', n));
+            }
+            Console.WriteLine("{0}", new string('=', (3 * n + 6) - 1));
+
+            if (n < 5)
+            {
+                Console.WriteLine("|{0}JAVA{0}|{1}|", new string('~', n), new string(' ', n - 1));
+            }
+            else
+            {
+                for (int j = 0; j < n / 2 - 1; j++)
+                {
+                    Console.WriteLine("|{0}|{1}|", new string('~', 2 * n + 4), new string(' ', n - 1));
+                }
+                Console.WriteLine("|{0}JAVA{0}|{1}|", new string('~', n), new string(' ', n - 1));
+                for (int j = 0; j < (3*n+1)-2*n-3-(n/2) ; j++)
+                {
+                    Console.WriteLine("|{0}|{1}|", new string('~', 2 * n + 4), new string(' ', n - 1));
+                }
+
+            }
+            Console.WriteLine("{0}", new string('=', (3 * n + 6) - 1));
+            var space = 0;
+            var at = (3 * n + 6) - n - 2;
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("{0}\\{1}/", new string(' ', space), new string('@', at));
+                space += 1;
+                at -= 2;
+            }
+            Console.WriteLine("{0}", new string('=', (3 * n + 6) - n));
+
+        }
+    }
+}

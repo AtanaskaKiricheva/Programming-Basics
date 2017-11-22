@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplicatiof2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var sum = 0;
+            var max = int.MinValue;
+            var num = 0;
+
+            for (int i = 0; i < n ; i++)
+            {
+                num = int.Parse(Console.ReadLine());
+                if (max<num)
+                {
+                    max = num;
+                }
+                sum += num;
+            }
+            var razlika = sum-max;
+           
+            if (razlika == max)
+            {
+                Console.WriteLine("Yes sum= {0}", max);
+            }
+            else
+            {
+                Console.WriteLine("No Diff= {0}", Math.Abs(max - razlika));
+            }
+        }
+    }
+}

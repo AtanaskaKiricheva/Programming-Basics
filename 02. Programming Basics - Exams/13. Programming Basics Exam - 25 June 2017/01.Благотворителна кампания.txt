@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var days = int.Parse(Console.ReadLine());
+            var sladkari = int.Parse(Console.ReadLine());
+            var torti = int.Parse(Console.ReadLine());
+            var gofreti = int.Parse(Console.ReadLine());
+            var palachinki = int.Parse(Console.ReadLine());
+
+            var cenatorta =torti* 45;
+            var cenagofreta =gofreti* 5.8;
+            var cenapalachinka =palachinki* 3.2;
+
+            var totaladay=(cenatorta+cenagofreta+cenapalachinka)*sladkari;
+            var totalcampaign = totaladay * days;
+
+            Console.WriteLine("{0:f2}",totalcampaign-((totalcampaign)/8));
+
+        }
+    }
+}

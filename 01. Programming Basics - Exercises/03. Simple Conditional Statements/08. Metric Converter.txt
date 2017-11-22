@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var tempValue = double.Parse(Console.ReadLine());  
+            var value = 0.0;                                  
+            var finalOutput = 0.0;                            
+            string inType = Console.ReadLine().ToLower(); 
+            string outType = Console.ReadLine().ToLower();
+
+            switch(inType)     
+            {
+                case "m":value = tempValue;break;  
+                case "mm":value = tempValue / 1000 ;break;
+                case "cm":value = tempValue / 100;break;
+                case "mi":value = tempValue / 0.000621371192; break;  
+                case "in":value = tempValue / 39.3700787; break;
+                case "km":value = tempValue / 0.001; break;   
+                case "ft":value = tempValue / 3.2808399; break;
+                case "yd":value = tempValue / 1.0936133; break;
+            }
+            switch (outType)    
+            {
+                case "m":finalOutput = value;break;
+                case "mm":finalOutput = value * 1000;break;
+                case "cm":finalOutput = value * 100;break;           
+                case "mi":finalOutput = value * 0.000621371192; break;
+                case "in":finalOutput = value * 39.3700787; break;
+                case "km":finalOutput = value * 0.001; break;
+                case "ft":finalOutput = value * 3.2808399; break;
+                case "yd":finalOutput = value * 1.0936133; break;
+            }
+            Console.WriteLine(finalOutput + " " + outType);
+        }
+    }
+}

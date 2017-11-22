@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var smallest = double.Parse(Console.ReadLine());
+            var kitchen = double.Parse(Console.ReadLine());
+            var m2 = double.Parse(Console.ReadLine());
+
+            var bathroom = smallest*0.5;
+            var second = smallest + smallest * 0.1;
+            var third = second + second * 0.1;
+
+            var total =(kitchen + bathroom + smallest + second + third);
+            var corridor = (total + total * 0.05)*m2;
+
+            Console.WriteLine("{0:f2}",corridor);
+
+        }
+    }
+}

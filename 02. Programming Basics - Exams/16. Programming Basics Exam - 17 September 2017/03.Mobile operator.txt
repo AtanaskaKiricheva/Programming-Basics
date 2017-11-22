@@ -1,0 +1,68 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var period = (Console.ReadLine());
+            var type = (Console.ReadLine());
+            var internet = (Console.ReadLine());
+            var months = int.Parse(Console.ReadLine());
+
+            var small = 0.0;
+            var middle = 0.0;
+            var large = 0.0;
+            var extralarge = 0.0;
+
+
+            if (period == "one")
+            {
+                switch (type)
+                {
+                    case "Small": small = 9.98; break;
+                    case "Middle": middle = 18.99; break;
+                    case "Large": large = 25.98; break;
+                    case "ExtraLarge": extralarge = 35.99; break;
+                }
+            }
+            else
+            {
+                switch (type)
+                {
+                    case "Small": small = 8.58; break;
+                    case "Middle": middle = 17.09; break;
+                    case "Large": large = 23.59; break;
+                    case "ExtraLarge": extralarge = 31.79; break;
+                }
+            }
+            var total = small + middle + large + extralarge;
+            if (internet == "yes")
+            {
+
+                if (total <= 10)
+                {
+                    total = total + 5.5;
+                }
+                else if (total <= 30)
+                {
+                    total = total + 4.35;
+                }
+                else if (total > 30)
+                {
+                    total = total + 3.85;
+                }
+            }
+            if (period=="two")
+            {
+                total *= 96.25/100;
+            }
+            Console.WriteLine("{0:f2} lv.", total*months);
+        }
+    }
+}

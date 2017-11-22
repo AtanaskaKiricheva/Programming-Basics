@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var months = int.Parse(Console.ReadLine());
+            var water = 0.0;
+            var internet = 0.0;
+            var electotal = 0.0;
+            var other = 0.0;
+
+            for (int i = 0; i < months; i++)
+            {
+            var elecbill= double.Parse(Console.ReadLine());
+                water += 20;
+                internet += 15;
+                electotal += elecbill;
+             other += (20 + 15 + elecbill)*0.2+ (20 + 15 + elecbill);
+
+            }
+
+
+            Console.WriteLine("Electricity: {0:f2} lv",electotal);
+            Console.WriteLine("Water: {0:f2} lv",water);
+            Console.WriteLine("Internet: {0:f2} lv", internet);
+            Console.WriteLine("Other: {0:f2} lv", other);
+            Console.WriteLine("Average: {0:f2} lv",(water+internet+electotal+other)/months);
+
+
+        }
+    }
+}

@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var lecturecount = int.Parse(Console.ReadLine());
+            var budget = double.Parse(Console.ReadLine());
+
+            var guestlecttors = 0;
+            var one = 0;
+            var two = 0;
+            var three = 0;
+            var four = 0;
+            var five = 0;
+            for (int i = 0; i < lecturecount; i++)
+            {
+                var nameoflector = (Console.ReadLine()).ToLower();
+
+                switch (nameoflector)
+                {
+                    case "jelev":one += 1; break;
+                    case "royal":two += 1; break;
+                    case "roli": three += 1; break;
+                    case "trofon": four += 1; break;
+                    case "sino": five += 1; break;
+                    default: guestlecttors += 1;break ;
+                }
+
+            }
+
+
+            Console.WriteLine("Jelev salary: {0:f2} lv", budget/lecturecount*one);
+            Console.WriteLine("RoYaL salary: {0:f2} lv",budget / lecturecount*two);
+            Console.WriteLine("Roli salary: {0:f2} lv",budget / lecturecount*three);
+            Console.WriteLine("Trofon salary: {0:f2} lv",budget /lecturecount*four);
+            Console.WriteLine("Sino salary: {0:f2} lv",budget / lecturecount*five);
+            Console.WriteLine("Others salary: {0:f2} lv",budget / lecturecount*guestlecttors);
+
+
+
+        }
+    }
+}

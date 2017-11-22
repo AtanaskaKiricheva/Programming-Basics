@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+
+            var zero = 0.0;
+            var one = 0.0;
+            var two = 0.0;
+            var three = 0.0;
+            var four = 0.0;
+            var five = 0.0;
+
+
+            for (int i = 0; i < n; i++)
+            {
+                var n1 = int.Parse(Console.ReadLine());
+                ++zero;
+
+                if (n1>=800)
+                {
+                    ++five ;
+                }
+                else if (n1>=600)
+                {
+                     ++four;
+                }
+                else if (n1>=400)
+                {
+                     ++three;
+                }
+                else if (n1>=200)
+                {
+                    ++ two ;
+                }
+                else
+                {
+                     ++one ;
+                }
+            }
+            Console.WriteLine("{0:f2}%", 100*one/zero);
+            Console.WriteLine("{0:f2}%", 100*two/zero);
+            Console.WriteLine("{0:f2}%", 100*three/zero);
+            Console.WriteLine("{0:f2}%", 100*four/zero);
+            Console.WriteLine("{0:f2}%", 100*five/zero);
+
+        }
+    }
+}

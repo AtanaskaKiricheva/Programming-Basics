@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var l = double.Parse(Console.ReadLine());
+            var w = double.Parse(Console.ReadLine());
+            var a = double.Parse(Console.ReadLine());
+
+            var golemina = (l * 100) * (w * 100);
+
+            var shelf = (a * 100) * (a * 100);
+
+            var peika = golemina / 10;
+
+            var freespace = golemina - shelf - peika;
+            Console.WriteLine(Math.Floor(freespace / (40 + 7000))) ;
+        }
+    }
+}

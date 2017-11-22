@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+
+
+        {
+            var n = int.Parse(Console.ReadLine());
+
+            var dots = n;
+            var sharp = n * 3;
+
+            for (int i = 0; i < n/2; i++)
+            {
+                Console.WriteLine("{0}{1}{0}", new string('.', dots), new string('#', sharp));
+                dots += 1;
+                sharp -= 2;
+            }
+            for (int i = 0; i < n/2+1; i++)
+            {
+                Console.WriteLine("{0}#{1}#{0}", new string('.', dots), new string('.', sharp-2));
+                dots += 1;
+                sharp -= 2;
+            }
+            Console.WriteLine("{0}{1}{0}", new string('.', dots-1), new string('#', sharp+2));
+            for (int i = 0; i < n/2; i++)
+            {
+                Console.WriteLine("{0}{1}{0}", new string('.', dots -3), new string('#', sharp +6));
+            }
+            Console.WriteLine("{0}D^A^N^C^E^{0}", new string('.', (5*n-10)/2));
+            for (int i = 0; i < n/2+1; i++)
+            {
+                Console.WriteLine("{0}{1}{0}", new string('.', dots - 3), new string('#', sharp + 6));
+            }
+        }
+    }
+}

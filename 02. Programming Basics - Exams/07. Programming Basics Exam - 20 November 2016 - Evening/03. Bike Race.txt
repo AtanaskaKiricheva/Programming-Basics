@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var junior = int.Parse(Console.ReadLine());
+            var senior = int.Parse(Console.ReadLine());
+            var trace = (Console.ReadLine()).ToLower();
+
+            var cross = (junior * 8 + senior * 9.5);
+
+            if (trace== "cross-country" && junior+senior>=50)
+            {
+                cross -= (junior * 8 + senior * 9.5) * 0.25;
+            }
+            
+            switch (trace)
+            {
+                case "trail": Console.WriteLine("{0:f2}",(junior * 5.5 + senior * 7)- (junior * 5.5 + senior * 7)*0.05); break;
+                case "cross-country": Console.WriteLine("{0:f2}", cross - cross*0.05); break;
+                case "downhill": Console.WriteLine("{0:f2}", (junior * 12.25 + senior * 13.75)- (junior * 12.25 + senior * 13.75)*0.05); break;
+                case "road": Console.WriteLine("{0:f2}", (junior * 20 + senior * 21.5)- (junior * 20 + senior * 21.5)*0.05); break;
+                   
+            }
+
+
+
+
+        }
+    }
+}

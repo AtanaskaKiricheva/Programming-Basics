@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplicatiof2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var godina = (Console.ReadLine());
+            var p = double.Parse(Console.ReadLine());
+            var h = double.Parse(Console.ReadLine());
+            var sofia = (48-h)*3/4;
+            var praznici = p * 2 / 3;
+            var total = (sofia + h + praznici);
+            
+
+            switch (godina)
+            {
+                case "leap": Console.WriteLine(Math.Floor((total)*15/100+total));      break;
+                case "normal": Console.WriteLine(Math.Floor(total)); break;
+            }
+
+
+        }
+    }
+}

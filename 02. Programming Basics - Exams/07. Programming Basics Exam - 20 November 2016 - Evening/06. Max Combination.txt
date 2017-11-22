@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			var n = int.Parse(Console.ReadLine());
+			var a = int.Parse(Console.ReadLine());
+			var max = int.Parse(Console.ReadLine());
+
+			var combination = 0;
+			for (int i = n; i <= a; i++)
+			{
+				for (int j = n; j <= a; j++)
+				{
+					Console.Write("<{0}-{1}>",i,j);
+					combination++;
+					if (max==combination)
+					{
+						Console.WriteLine();
+						return;
+					}
+				}
+			}
+			Console.WriteLine();
+
+		}
+	}
+}

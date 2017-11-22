@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            var dots =  n + 1;
+            var dash =  n * 2 + 1;
+
+
+            Console.WriteLine("{0}{1}{0}", new string('.', dots), new string('_', dash));
+            for (int i = 0; i < n; i++)
+            {
+                dots -= 1;
+                dash -= 2;
+                Console.WriteLine(@"{0}//{1}\\{0}", new string('.', dots), new string('_', dash));
+                dash += 4;
+            }
+            Console.WriteLine(@"//{0}STOP!{0}\\",new string('_', dash/2-3));
+
+                dots = 0;
+                dash = n*4-1;
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine(@"{0}\\{1}//{0}", new string('.', dots), new string('_', dash));
+                dash -= 2;
+                dots += 1;
+            }
+
+        }
+    }
+}

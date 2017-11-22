@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var pieces = int.Parse(Console.ReadLine());
+            var prize = double.Parse(Console.ReadLine());
+
+            var total = 0.0;
+            for (int i = 0; i < pieces; i++)
+            {
+                var points = int.Parse(Console.ReadLine());
+
+                if (i % 2 == 0)
+                {
+                    total += points;
+                }
+                else
+                {
+                    total += points * 2;
+                }
+            }
+            Console.WriteLine("The project prize was {0:f2} lv.", total*prize);
+        }
+    }
+}

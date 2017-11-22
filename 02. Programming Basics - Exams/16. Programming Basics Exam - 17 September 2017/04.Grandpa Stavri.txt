@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+
+            var total = 0.0;
+            var previousday = 0.0;
+            for (int i = 0; i < n; i++)
+            {
+                var quantity = double.Parse(Console.ReadLine());
+                var degree = double.Parse(Console.ReadLine());
+                total += quantity * degree;
+                previousday += quantity;
+            }
+            var gradus = total / previousday;
+            Console.WriteLine("Liter: {0:f2}",previousday);
+            Console.WriteLine("Degrees: {0:f2}",gradus);
+            if (gradus<38)
+            Console.WriteLine("Not good, you should baking!");
+            else if (gradus>=38 && gradus<=42)
+                Console.WriteLine("Super!");
+            else
+                Console.WriteLine("Dilution with distilled water!");
+        }
+    }
+}

@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var m = int.Parse(Console.ReadLine());
+            var control = int.Parse(Console.ReadLine());
+
+            var moves = 0;
+            var sum = 0;
+
+            for (int i = 1; i <= n; i++)
+            {
+                for (int j = m; j >= 1; j--)
+                {
+                    sum += i * 2;
+                    sum += j * 3;
+                    if (sum >= control)
+                    {
+                        Console.WriteLine("{0} moves", moves+1);
+                        Console.WriteLine("Score: {0} >= {1}", sum, control);
+                        return;
+                    }
+                    moves++;
+                }
+            }
+            Console.WriteLine("{0} moves", moves);
+
+
+        }
+    }
+}

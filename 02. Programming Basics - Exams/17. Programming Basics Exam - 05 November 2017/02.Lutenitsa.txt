@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var kolichestvo = double.Parse(Console.ReadLine());
+            var kasetki = int.Parse(Console.ReadLine());
+            var burkani = int.Parse(Console.ReadLine());
+
+            var totalkiloslutenica = kolichestvo / 5;
+            var jars = totalkiloslutenica / 0.535;
+            var kas = jars / burkani;
+            Console.WriteLine("Total lutenica: {0} kilograms.",Math.Floor(totalkiloslutenica));
+
+            if (kas>kasetki)
+            {
+                Console.WriteLine("{0} boxes left.",Math.Floor(kas-kasetki));
+                Console.WriteLine("{0} jars left.", Math.Floor(jars -(kasetki*burkani)));
+            }
+            else
+            {
+                Console.WriteLine("{0} more boxes needed.", Math.Floor(kasetki-kas));
+                Console.WriteLine("{0} more jars needed.", Math.Floor((kasetki*burkani)-jars));
+            }
+
+
+
+        }
+    }
+}

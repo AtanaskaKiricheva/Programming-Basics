@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var collectedmoney = double.Parse(Console.ReadLine());
+            var floorW= double.Parse(Console.ReadLine());
+            var floorL = double.Parse(Console.ReadLine());
+            var triangleS = double.Parse(Console.ReadLine());
+            var triangleH = double.Parse(Console.ReadLine());
+            var pricepertile = double.Parse(Console.ReadLine());
+            var payment = double.Parse(Console.ReadLine());
+
+            var floor = floorW * floorL;
+            var tile = triangleS * triangleH/2;
+            var neededtiles = Math.Ceiling(floor / tile) +5;
+            var total = neededtiles * pricepertile + payment;
+
+            if (collectedmoney>=total)
+            {
+                Console.WriteLine("{0:f2} lv left.", collectedmoney-total);
+            }
+            else
+            {
+                Console.WriteLine("You'll need {0:f2} lv more.", total-collectedmoney);
+            }
+
+        }
+    }
+}

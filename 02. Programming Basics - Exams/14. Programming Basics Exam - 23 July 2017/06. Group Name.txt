@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+
+
+        {
+            var A = char.Parse(Console.ReadLine());
+            var first = char.Parse(Console.ReadLine());
+            var second = char.Parse(Console.ReadLine());
+            var thid = char.Parse(Console.ReadLine());
+            var number = int.Parse(Console.ReadLine());
+
+            var count = 0;
+
+            for (var i = 65; i <= A; i++)
+            {
+                for (var j = 97; j <= first; j++)
+                {
+                    for (var k = 97; k <= second; k++)
+                    {
+                        for (var l = 97; l <= thid; l++)
+                        {
+                            for (var m = 0; m < number; m++)
+                            {
+                                count++;
+                            }
+                            count++;
+                        }
+                    }
+                }
+            }
+
+            Console.WriteLine(count-1);
+
+
+        }
+    }
+}

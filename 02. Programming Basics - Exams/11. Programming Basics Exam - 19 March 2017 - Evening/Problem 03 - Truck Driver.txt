@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var season = (Console.ReadLine());
+            var kilometers = double.Parse(Console.ReadLine());
+
+
+            var cena = 0.0;
+
+            if (kilometers <= 5000)
+            {
+                switch (season)
+                {
+                    case "Spring":cena=0.75; break;
+                    case "Autumn":cena = 0.75; break;
+                    case "Summer":cena = 0.9; break;
+                    case "Winter":cena = 1.05; break;
+                }
+            }
+            if (kilometers>5000 && kilometers<=10000)
+            {
+                switch (season)
+                {
+                    case "Spring": cena = 0.95; break;
+                    case "Autumn": cena = 0.95; break;
+                    case "Summer": cena = 1.1; break;
+                    case "Winter": cena = 1.25; break;
+                }
+            }
+            if (kilometers>10000 && kilometers<=20000)
+            {
+                switch (season)
+                {
+                    case "Spring": cena = 1.45; break;
+                    case "Autumn": cena = 1.45; break;
+                    case "Summer": cena = 1.45; break;
+                    case "Winter": cena = 1.45; break;
+                }
+            }
+            var total = (cena * kilometers)*4 - ((cena * kilometers) * 4) * 0.1;
+
+            Console.WriteLine("{0:f2}",total);
+        }
+    }
+}

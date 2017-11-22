@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			var start = char.Parse(Console.ReadLine());
+			var end = char.Parse(Console.ReadLine());
+			var exception = char.Parse(Console.ReadLine());
+
+			var combination = 0;
+			for (int i = start; i <= end; i++)
+			{
+				for (int j = start; j <= end; j++)
+				{
+					for (int k = start; k <= end; k++)
+					{
+						if (i!=exception&&j!=exception&&k!=exception)
+						{
+						Console.Write("{0}{1}{2} ", (char)i,(char)j,(char)k);
+						combination++;
+						}
+
+					}
+
+				}
+			}
+			Console.WriteLine(combination);
+
+		}
+	}
+}

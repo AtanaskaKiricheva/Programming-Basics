@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            var space = new string(' ', n);
+            var stars = new string('*', 2*n);
+            var inclined = new string('/', (2 * n) - 2);
+            var straight = new string('|', n);
+
+                Console.WriteLine($"{stars}{space}{stars}");
+            for (int i = 1; i <=n-2; i++)
+            {
+              if (i==(n-1)/2)
+              {
+                  Console.WriteLine($"*{inclined}*{straight}*{inclined}*");
+              }
+                else
+                {
+                  Console.WriteLine($"*{inclined}*{space}*{inclined}*");
+                }
+           
+            }
+                Console.WriteLine($"{stars}{space}{stars}");
+        }
+    }
+}

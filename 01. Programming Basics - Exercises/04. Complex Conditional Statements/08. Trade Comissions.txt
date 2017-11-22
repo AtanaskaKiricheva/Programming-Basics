@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplicatiof2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var city = (Console.ReadLine());
+            var n = double.Parse(Console.ReadLine());
+
+            if (0 <= n && n <= 500)
+                switch (city)
+                {
+                    case "Sofia": Console.WriteLine("{0:f2}", n * 5 / 100); ; break;
+                    case "Varna": Console.WriteLine("{0:f2}", n * 4.5 / 100); break;
+                    case "Plovdiv": Console.WriteLine("{0:f2}", (n * 5.5) / 100); break;
+                    default: Console.WriteLine("error");break;
+                }
+            else if (500 < n && n <= 1000)
+                switch (city)
+                {
+                    case "Sofia": Console.WriteLine("{0:f2}", n * 7 / 100); ; break;
+                    case "Varna": Console.WriteLine("{0:f2}", n * 7.5 / 100); break;
+                    case "Plovdiv": Console.WriteLine("{0:f2}", (n * 8) / 100); break;
+                    default: Console.WriteLine("error");break;
+
+                }
+            else if (1000<n&&n<=10000)
+                switch (city)
+                {
+                    case "Sofia": Console.WriteLine("{0:f2}", n * 8 / 100); ; break;
+                    case "Varna": Console.WriteLine("{0:f2}", n * 10 / 100); break;
+                    case "Plovdiv": Console.WriteLine("{0:f2}", (n * 12) / 100); break;
+                    default: Console.WriteLine("error");break;
+
+                }
+            else if (n>10000)
+                switch (city)
+            {
+                case "Sofia": Console.WriteLine("{0:f2}", n * 12 / 100); ; break;
+                case "Varna": Console.WriteLine("{0:f2}", n * 13 / 100); break;
+                case "Plovdiv": Console.WriteLine("{0:f2}", (n * 14.5) / 100); break;
+                    default: Console.WriteLine("error");break;
+
+                }
+            else
+            {
+                Console.WriteLine("error");
+            }
+        }
+    }
+}

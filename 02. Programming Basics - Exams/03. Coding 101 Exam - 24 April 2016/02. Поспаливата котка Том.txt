@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+            var norm = 30000;
+            var daysoff = n * 127;
+            var workdays = 365 - n;
+            var minstoplay = workdays * 63;
+            var total = daysoff + minstoplay;
+            
+
+            if (total>norm)
+            {
+                Console.WriteLine("Tom will run away");
+                Console.WriteLine("{0:f0} hours and {1} minutes more for play",
+                    Math.Abs((norm-total)/60),Math.Abs((norm-total)%60));
+            }
+            else
+            {
+                Console.WriteLine("Tom sleeps well");
+                Console.WriteLine("{0:f0} hours and {1} minutes less for play",
+                   Math.Abs((norm-total)/60) ,Math.Abs((norm-total)%60));
+            }
+
+
+
+        }
+    }
+}

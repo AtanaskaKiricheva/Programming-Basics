@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var hoursneeded = int.Parse(Console.ReadLine());
+            var daysfirmhas = int.Parse(Console.ReadLine());
+            var workersquantity = int.Parse(Console.ReadLine());
+
+            var workhours = (daysfirmhas-(0.1*daysfirmhas))*8;
+            var hours = daysfirmhas - workhours;
+            var workers = workersquantity * (2 * daysfirmhas);
+            var totalhours = Math.Truncate(workhours + workers);
+
+            if (totalhours>=hoursneeded)
+            {
+                Console.WriteLine("Yes!{0} hours left.", totalhours-hoursneeded);
+            }
+            else
+            {
+                Console.WriteLine("Not enough time!{0} hours needed.", hoursneeded-totalhours);
+            }
+
+
+
+        }
+    }
+}

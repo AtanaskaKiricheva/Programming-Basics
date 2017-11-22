@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var n = int.Parse(Console.ReadLine());
+
+            var leftdots = 0;
+            var middots = n;
+            for (int i = 0; i < ((2*n)+1)/2-1; i++)
+            {
+            Console.WriteLine("{0}*{1}*{1}*{0}",new string('.',leftdots),new string('.',middots));
+                leftdots += 1;
+                middots -= 1;
+            }
+            Console.WriteLine("{0}{1}{0}", new string('.',leftdots),new string('*', (2*n+3)-2*(leftdots)));
+            Console.WriteLine("{0}",new string('*', 2*n+3));
+            Console.WriteLine("{0}{1}{0}", new string('.',leftdots),new string('*', (2*n+3)-2*(leftdots)));
+            for (int i = 0; i < ((2 * n) + 1) / 2 - 1; i++)
+            {
+                leftdots -= 1;
+                middots += 1;
+                Console.WriteLine("{0}*{1}*{1}*{0}", new string('.', leftdots), new string('.', middots));
+            }
+        }
+    }
+}

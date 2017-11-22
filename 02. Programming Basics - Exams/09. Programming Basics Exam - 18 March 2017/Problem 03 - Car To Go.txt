@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var budget = double.Parse(Console.ReadLine());
+            var season = Console.ReadLine();
+
+            var klas = string.Empty;
+            var car = string.Empty;
+
+            if (budget <= 100)
+            {
+                klas = "Economy class";
+                switch (season)
+                {
+                    case "Summer": budget = 0.35*budget; car = "Cabrio"; break;
+                    case "Winter": budget = 0.65*budget ; car = "Jeep"; break;
+                }
+            }
+            if (budget > 100 && budget <= 500)
+            {
+                klas = "Compact class";
+                switch (season)
+                {
+                    case "Summer": budget = 0.45*budget; car = "Cabrio"; break;
+                    case "Winter": budget = 0.8*budget; car = "Jeep"; break;
+                }
+            }
+            if (budget > 500)
+            {
+                klas = "Luxury class";
+                switch (season)
+                {
+                    case "Summer": budget = 0.9*budget; car = "Jeep"; break;
+                    case "Winter": budget = 0.9*budget; car = "Jeep"; break;
+                }
+            }
+            Console.WriteLine(klas);
+            Console.Write(car); Console.WriteLine(" - {0:f2}",budget);
+        }
+    }
+}

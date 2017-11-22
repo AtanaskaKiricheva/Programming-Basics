@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var examhour = int.Parse(Console.ReadLine());
+            var examminute = int.Parse(Console.ReadLine());
+            var hourofarrival = int.Parse(Console.ReadLine());
+            var minuteofarrival = int.Parse(Console.ReadLine());
+
+            TimeSpan hourtominexam = TimeSpan.FromHours(examhour);
+            TimeSpan hourtominarrival = TimeSpan.FromHours(hourofarrival);
+            var totalexam = hourtominexam.TotalMinutes + examminute;
+            var totalarrival = hourtominarrival.TotalMinutes + minuteofarrival;
+
+            if (totalexam - totalarrival <= 30 && totalexam - totalarrival >= 0)
+            {
+                TimeSpan a = TimeSpan.FromMinutes(totalexam - totalarrival);
+                var a1 = a.ToString(@"%m");
+                    Console.WriteLine(("On time"));
+                if (totalarrival != totalexam)
+                {
+                    Console.WriteLine("{0} minutes before the start", a1);
+                }
+            }
+            if (totalarrival > totalexam)
+            {
+                TimeSpan a = TimeSpan.FromMinutes(totalarrival - totalexam);
+                if (totalarrival-totalexam<60)
+                {
+                var a1 = a.ToString(@"%m");
+                    Console.WriteLine(("Late"));
+                    Console.WriteLine("{0:0} minutes after the start", a1);
+                }
+                else
+                {
+                    var a1 = a.ToString(@"h\:mm");
+                    Console.WriteLine(("Late"));
+                Console.WriteLine("{0} hours after the start", a1);
+                }
+            }
+           if (totalexam-totalarrival>30)
+            {
+                TimeSpan a = TimeSpan.FromMinutes(totalexam - totalarrival);
+                Console.WriteLine(("Early"));
+                if (totalexam-totalarrival>30&& totalexam-totalarrival<60)
+                {
+                var a1 = a.ToString(@"%m");
+                Console.WriteLine("{0} minutes before the start", a1);
+                }
+                else if (totalexam-totalarrival>=60)
+                {
+                   var a1 = a.ToString(@"h\:mm");
+                    Console.WriteLine("{0} hours before the start", a1);
+                }
+            }
+
+
+
+
+        }
+    }
+}

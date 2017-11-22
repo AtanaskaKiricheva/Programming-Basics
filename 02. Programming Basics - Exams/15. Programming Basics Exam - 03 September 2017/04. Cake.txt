@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var width = int.Parse(Console.ReadLine());
+            var length = int.Parse(Console.ReadLine());
+
+            var count = width * length;
+            var pieces = 0;
+
+            for (int i = 0; i < width * length; i++)
+            {
+                try
+                {
+                    pieces = int.Parse(Console.ReadLine());
+                    count -= pieces;
+                    if (count < 0)
+                    {
+                        Console.WriteLine("No more cake left! You need {0} pieces more.", Math.Abs(count));
+                        return;
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("{0} pieces are left.", count);
+                    return;
+                }
+            }
+            Console.WriteLine("{0} pieces are left.", count);
+
+
+
+        }
+    }
+}

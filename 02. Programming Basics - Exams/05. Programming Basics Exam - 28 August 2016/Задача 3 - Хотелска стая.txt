@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var month = (Console.ReadLine());
+            var nights = int.Parse(Console.ReadLine());
+            var discount = 0.0;
+            var discountapartment = 0.0;
+
+            if (nights>14)
+            {
+                discountapartment = 0.1;
+            }
+            if (month == "May" || month == "October")
+            {
+                var studio = 50;
+                var apartment = 65;
+                if (nights>7)
+                {
+                    discount = 0.05;
+                }
+                if (nights>14)
+                {
+                    discount = 0.3;
+                }
+                var total = studio - studio * discount;
+                var total1 = apartment - apartment * discountapartment;
+                Console.WriteLine("Apartment: {0:f2} lv.",total1*nights);
+                Console.WriteLine("Studio: {0:f2} lv.", total*nights);
+
+            }
+
+            if (month == "June"||month=="September")
+            {
+                var studio = 75.2;
+                var apartment = 68.7;
+                if (nights>14)
+                {
+                    discount = 0.2;
+                }
+                var total = studio - studio * discount;
+                var total1 = apartment - apartment * discountapartment;
+                Console.WriteLine("Apartment: {0:f2} lv.", total1 * nights);
+                Console.WriteLine("Studio: {0:f2} lv.", total * nights);
+            }
+
+            if (month=="July"||month=="August")
+            {
+                var studio = 76;
+                var apartment = 77;
+                var total = studio - studio * discount;
+                var total1 = apartment - apartment * discountapartment;
+                Console.WriteLine("Apartment: {0:f2} lv.", total1 * nights);
+                Console.WriteLine("Studio: {0:f2} lv.", total * nights);
+            }
+
+        }
+    }
+}

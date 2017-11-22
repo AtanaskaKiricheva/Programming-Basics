@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var h = double.Parse(Console.ReadLine());
+            var w = double.Parse(Console.ReadLine());
+
+                var column=Math.Truncate( h / 1.2);
+                var desks =Math.Truncate( (w - 1) / 0.7);
+            var total = column * desks - 3;
+            Console.WriteLine(Math.Truncate(total));
+
+        }
+    }
+}

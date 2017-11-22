@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var steps = double.Parse(Console.ReadLine());
+            var dancers = int.Parse(Console.ReadLine());
+            var daystostudy = double.Parse(Console.ReadLine());
+
+            var stepsaday = ((steps / daystostudy) / steps)*100;
+            stepsaday = (int)Math.Ceiling(stepsaday);
+            var stepsperdancer = (stepsaday * 100) / dancers;
+
+            if ((stepsperdancer/100)*dancers<=13)
+            {
+                Console.WriteLine($"Yes, they will succeed in that goal! {stepsperdancer/100:f2}%.");
+            }
+            else
+            {
+                Console.WriteLine("No, They will not succeed in that goal! Required {0:f2}% steps to be learned per day.",(stepsperdancer/100));
+            }
+        }
+    }
+}

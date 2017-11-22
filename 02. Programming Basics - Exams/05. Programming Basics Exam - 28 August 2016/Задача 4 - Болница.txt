@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var period = int.Parse(Console.ReadLine());
+
+            var maxpatient = 7;
+            var pregledani = 0;
+            var nepregledani = 0;
+                   
+
+            for (int i = 1; i <= period; i++)
+            {
+            var days = int.Parse(Console.ReadLine());
+                if (i%3==0 && nepregledani>pregledani)
+                {
+                    maxpatient += 1;
+                }
+                if (days>maxpatient)
+                {
+                   var nepregledanizadenq = days - maxpatient;
+                    var pregledanizadenq =days-nepregledanizadenq;
+                    nepregledani += nepregledanizadenq;
+                    pregledani += pregledanizadenq;
+                }
+                else
+                {
+                pregledani += days;
+                }
+
+            }
+            Console.WriteLine("Treated patients: {0}.", pregledani); Console.WriteLine("Untreated patients: {0}.",nepregledani );
+
+        }
+    }
+}

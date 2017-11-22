@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var vid = Console.ReadLine();
+            var size = double.Parse(Console.ReadLine());
+            var value = 0.0;
+
+           
+                switch (vid)
+                {
+                    case "square": value = size * size; break;
+                    case "rectangle":var side =double.Parse(Console.ReadLine()); value = size * side; break;
+                    case "circle":value= (Math.PI*size)*size; break;
+                    case "triangle":var side2 = double.Parse(Console.ReadLine()); value=(size*side2)/2; break;
+                }
+            Console.WriteLine("{0:N3}", value);
+        }
+    }
+}

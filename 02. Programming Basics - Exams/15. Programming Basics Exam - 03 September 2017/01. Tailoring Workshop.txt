@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+
+
+        {
+            var counttables = int.Parse(Console.ReadLine());
+            var length = double.Parse(Console.ReadLine());
+            var width = double.Parse(Console.ReadLine());
+
+            var pokrivka = counttables*(length + 2 * 0.30) * (width + 2 * 0.3);
+            var kareta = counttables * (length / 2) * (length / 2);
+
+            Console.WriteLine("{0:f2} USD",pokrivka*7+kareta*9);
+            Console.WriteLine("{0:f2} BGN", (pokrivka*7+kareta*9)*1.85);
+
+        }
+    }
+}
